@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <title>Liste des Cours</title>
+    <style>
+        :root {
+            --white: #fff;
+            --blue: #2A4975;
+            --black1: #333;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f0f0f0;
+            margin: 0;
+            padding: 20px;
+        }
+
+        .details {
+            position: relative;
+            width: 100%;
+            padding: 20px;
+            display: grid;
+            grid-template-columns: 2fr 1fr;
+            grid-gap: 30px;
+        }
+
+        .details .recentOrders {
+            position: relative;
+            display: grid;
+            min-height: 500px;
+            background: var(--white);
+            padding: 20px;
+            box-shadow: 0 7px 25px rgba(0, 0, 0, 0.08);
+            border-radius: 20px;
+        }
+
+        .details .cardHeader {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+        }
+
+        .cardHeader h2 {
+            font-weight: 600;
+            color: var(--blue);
+        }
+
+        .cardHeader .btn {
+            position: relative;
+            padding: 5px 10px;
+            background: var(--blue);
+            text-decoration: none;
+            color: var(--white);
+            border-radius: 6px;
+        }
+
+        .details table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 10px;
+        }
+
+        .details table thead td {
+            font-weight: 600;
+        }
+
+        .details .recentOrders table tr {
+            color: #541A1C;
+            border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+        }
+
+        .details .recentOrders table tr:last-child {
+            border-bottom: none;
+        }
+
+        .details .recentOrders table tbody tr:hover {
+            background: var(--blue);
+            color: var(--white);
+        }
+
+        .details .recentOrders table tr td {
+            padding: 10px;
+        }
+
+        .details .recentOrders table tr td:last-child {
+            text-align: end;
+        }
+
+        .details .recentOrders table tr td:nth-child(2) {
+            text-align: end;
+        }
+
+        .details .recentOrders table tr td:nth-child(3) {
+            text-align: center;
+        }
+
+        .status.delivered {
+            padding: 2px 4px;
+            background: #8de02c;
+            color: var(--white);
+            border-radius: 4px;
+            font-size: 14px;
+            font-weight: 500;
+        }
+
+        .status.pending {
+            padding: 2px 4px;
+            background: #e9b10a;
+            color: var(--white);
+            border-radius: 4px;
+            font-size: 14px;
+            font-weight: 500;
+        }
+
+        .status.return {
+            padding: 2px 4px;
+            background: #f00;
+            color: var(--white);
+            border-radius: 4px;
+            font-size: 14px;
+            font-weight: 500;
+        }
+
+        .status.inProgress {
+            padding: 2px 4px;
+            background: #1795ce;
+            color: var(--white);
+            border-radius: 4px;
+            font-size: 14px;
+            font-weight: 500;
+        }
+
+        .status.presentiel {
+            padding: 2px 4px;
+            background: red;
+            color: var(--white);
+            border-radius: 4px;
+            font-size: 14px;
+            font-weight: 500;
+        }
+
+        .status.en-ligne {
+            padding: 2px 4px;
+            background: #4CAF50;
+            color: var(--white);
+            border-radius: 4px;
+            font-size: 14px;
+            font-weight: 500;
+        }
+    </style>
+</head>
+<body>
+    <div class="details">
+        <div class="recentOrders">
+            <div class="cardHeader">
+                <h2>Liste des Cours</h2>
+                <a href="#" class="btn">Voir Tout</a>
+            </div>
+
+            <table>
+                <thead>
+                    <tr>
+                        <td>Nom du Cours</td>
+                        <td>Heure</td>
+                        <td>Professeur</td>
+                        <td>Niveau</td>
+                        <td>Status</td>
+                    </tr>
+                </thead>
+
+                <tbody>
+                    <tr>
+                        <td>Analyse Financière (Finance-Banque-Assurance)</td>
+                        <td>8H00</td>
+                        <td>M. OHOUGBEGNON</td>
+                        <td>Bachelor 1</td>
+                        <td><span class="status presentiel">Terminer</span></td>
+                    </tr>
+                    <tr>
+                        <td>Fondamentaux de l'Assurance (Spécialité Finance-Banque-Assurance)</td>
+                        <td>10H05</td>
+                        <td>M. DRO</td>
+                        <td>Bachelor 1</td>
+                        <td><span class="status en-ligne">Encours</span></td>
+                    </tr>
+                    <tr>
+                        <td>Gestion des Sinistres (Spécialité Finance-Banque-Assurance)</td>
+                        <td>14H30</td>
+                        <td>M. MOUMOUNI</td>
+                        <td>Bachelor 1</td>
+                        <td><span class="status presentiel">Terminer</span></td>
+                    </tr>
+                    <tr>
+                        <td>Management de la Force de Vente (Spécialité Marketing Digital et Communication)</td>
+                        <td>12H30</td>
+                        <td>M. AYANDEDJI</td>
+                        <td>Bachelor 1</td>
+                        <td><span class="status presentiel">Terminer</span></td>
+                    </tr>
+                    <tr>
+                        <td>Contrôle de Gestion (Spécialité Finance-Banque-Assurance)</td>
+                        <td>14H15</td>
+                        <td>M. YAKUBI</td>
+                        <td>Bachelor 1</td>
+                        <td><span class="status presentiel">Terminer</span></td>
+                    </tr>
+                    <tr>
+                        <td>Atelier IT</td>
+                        <td>12H10</td>
+                        <td>M. AMOUZOUVI</td>
+                        <td>Bachelor 1</td>
+                        <td><span class="status presentiel">Terminer</span></td>
+                    </tr>
+                    <tr>
+                        <td>Processus et Intégration IT</td>
+                        <td>14H30</td>
+                        <td>M. KOUGBAGAN</td>
+                        <td>Bachelor 1</td>
+                        <td><span class="status en-ligne">Encours</span></td>
+                    </tr>
+                    <tr>
+                        <td>Versionning Logiciel</td>
+                        <td>12H30</td>
+                        <td>M. DEKU</td>
+                        <td>Bachelor 1</td>
+                        <td><span class="status en-ligne">Encours</span></td>
+                    </tr>
+                    <tr>
+                        <td>Projet SI</td>
+                        <td>15H30</td>
+                        <td>M. BORIS</td>
+                        <td>Bachelor 1</td>
+                        <td><span class="status en-ligne">Encours</span></td>
+                    </tr>
+                    <tr>
+                        <td>Gestion des Codes-Technique de Programmation</td>
+                        <td>16H30</td>
+                        <td>M. BOKORVI</td>
+                        <td>Bachelor 1</td>
+                        <td><span class="status en-ligne">Encours</span></td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</body>
+</html>

@@ -79,7 +79,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
         <div class="text-center">
             <button type="submit" class="btn btn-primary">Réinitialiser</button>
-            <a href="../index.html" class="btn btn-secondary ms-2">Annuler</a>
+            <a href="../login.php" class="btn btn-secondary ms-2">Annuler</a>
         </div>
     </form>
 </div>

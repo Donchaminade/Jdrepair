@@ -2,6 +2,7 @@
 session_start();
 require_once '../Admin/includes/conf.php';
 
+// Traitement du formulaire
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $email = htmlspecialchars(trim($_POST['email']));
     $password = trim($_POST['mot_de_passe']);
@@ -132,47 +133,21 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 <?php endif; ?>
 
 <script>
-    // Configuration inline pour particles.js
-    particlesJS("particles-js", {
-        "particles": {
-            "number": { "value": 60 },
-            "color": { "value": "#ffffff" },
-            "shape": { "type": "circle" },
-            "opacity": { "value": 0.5 },
-            "size": { "value": 3 },
-            "line_linked": {
-                "enable": true,
-                "distance": 150,
-                "color": "#ffffff",
-                "opacity": 0.4,
-                "width": 1
-            },
-            "move": {
-                "enable": true,
-                "speed": 4,
-                "direction": "none",
-                "out_mode": "bounce"
-            }
-        },
-        "interactivity": {
-            "detect_on": "canvas",
-            "events": {
-                "onhover": { "enable": true, "mode": "repulse" },
-                "onclick": { "enable": true, "mode": "push" }
-            },
-            "modes": {
-                "repulse": { "distance": 100 },
-                "push": { "particles_nb": 4 }
-            }
-        },
-        "retina_detect": true
+    // Particles.js
+    particlesJS.load('particles-js', 'particles.json', function () {
+        console.log('Particles.js chargé');
     });
 
-    // Afficher/Masquer mot de passe
+    // Toggle password
     document.getElementById('togglePassword').addEventListener('click', function () {
         const field = document.getElementById('password');
-        field.type = (field.type === 'password') ? 'text' : 'password';
-        this.textContent = (field.type === 'password') ? '👁️' : '🙈';
+        if (field.type === 'password') {
+            field.type = 'text';
+            this.textContent = '🙈';
+        } else {
+            field.type = 'password';
+            this.textContent = '👁️';
+        }
     });
 </script>
 
